@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pronative Attendance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo-container">
+
+                <div class="logo-box">
+                    PN
+                </div>
+
+                <div class="logo-text">
+                    <h2>pronative</h2>
+                    <span>Attendance</span>
+                </div>
+
+            </div>
+
+            <nav class="navigation">
+
+                <button
+                    class="nav-item active"
+                    data-section="dashboard"
+                >
+                    <span class="nav-icon">🏠</span>
+                    <span>Dashboard</span>
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-section="participants"
+                >
+                    <span class="nav-icon">👥</span>
+                    <span>Participants</span>
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-section="attendance"
+                >
+                    <span class="nav-icon">📝</span>
+                    <span>Attendance</span>
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-section="history"
+                >
+                    <span class="nav-icon">📋</span>
+                    <span>Attendance History</span>
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-section="summary"
+                >
+                    <span class="nav-icon">📊</span>
+                    <span>Attendance Summary</span>
+                </button>
+
+                <button
+                    class="nav-item"
+                    data-section="settings"
+                >
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </button>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p id="currentDate"></p>
+                </div>
+
+                <button
+                    class="mobile-menu"
+                    id="mobileMenu"
+                >
+                    ☰
+                </button>
+
+            </header>
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section
+                id="dashboard"
+                class="content-section active-section"
+            >
+
+                <div class="welcome-card">
+
+                    <div>
+
+                        <span>Welcome to</span>
+
+                        <h2>
+                            Pronative Attendance
+                        </h2>
+
+                        <p>
+                            Manage English course
+                            attendance easily and efficiently.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-icon">
+                        📚
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            👥
+                        </div>
+
+                        <div>
+                            <p>Total Participants</p>
+                            <h3 id="totalParticipants">0</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            ✓
+                        </div>
+
+                        <div>
+                            <p>Present Today</p>
+                            <h3 id="totalPresent">0</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon yellow">
+                            📝
+                        </div>
+
+                        <div>
+                            <p>Permission</p>
+                            <h3 id="totalPermission">0</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            🤒
+                        </div>
+
+                        <div>
+                            <p>Sick</p>
+                            <h3 id="totalSick">0</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon red">
+                            ✕
+                        </div>
+
+                        <div>
+                            <p>Absent</p>
+                            <h3 id="totalAbsent">0</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>Application Information</h3>
+
+                        <p>
+                            Pronative Attendance system overview
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+                            <strong>📚 Application</strong>
+                            <span>
+                                Pronative Attendance
+                            </span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>💾 Storage</strong>
+                            <span>
+                                Browser Local Storage
+                            </span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>📱 Device</strong>
+                            <span>
+                                Desktop & Mobile Responsive
+                            </span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>⚡ Technology</strong>
+                            <span>
+                                HTML, CSS & JavaScript
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= PARTICIPANTS ================= -->
+
+            <section
+                id="participants"
+                class="content-section"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Participants</h2>
+
+                        <p>
+                            Manage English course participants.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-primary"
+                        id="addParticipantBtn"
+                    >
+                        + Add Participant
+                    </button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            id="participantSearch"
+                            placeholder="🔍 Search participant..."
+                        >
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Participant ID</th>
+                                    <th>Full Name</th>
+                                    <th>Class</th>
+                                    <th>English Level</th>
+                                    <th>Phone</th>
+                                    <th>Actions</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="participantTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ATTENDANCE ================= -->
+
+            <section
+                id="attendance"
+                class="content-section"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Attendance</h2>
+
+                        <p>
+                            Record participant attendance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="attendanceDate">
+                                Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="attendanceDate"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="attendanceClass">
+                                Class
+                            </label>
+
+                            <select id="attendanceClass">
+
+                                <option value="">
+                                    All Classes
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Participant</th>
+                                    <th>Class</th>
+                                    <th>Attendance Status</th>
+                                    <th>Notes</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="attendanceTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            class="btn btn-primary"
+                            id="saveAttendanceBtn"
+                        >
+                            💾 Save Attendance
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= HISTORY ================= -->
+
+            <section
+                id="history"
+                class="content-section"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Attendance History</h2>
+
+                        <p>
+                            View participant attendance history.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="btn btn-secondary"
+                        id="exportCsvBtn"
+                    >
+                        📥 Export CSV
+                    </button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="filter-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                Participant
+                            </label>
+
+                            <input
+                                type="text"
+                                id="historyName"
+                                placeholder="Search name..."
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Class
+                            </label>
+
+                            <select id="historyClass">
+
+                                <option value="">
+                                    All Classes
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Status
+                            </label>
+
+                            <select id="historyStatus">
+
+                                <option value="">
+                                    All Status
+                                </option>
+
+                                <option value="Present">
+                                    Present
+                                </option>
+
+                                <option value="Permission">
+                                    Permission
+                                </option>
+
+                                <option value="Sick">
+                                    Sick
+                                </option>
+
+                                <option value="Absent">
+                                    Absent
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="historyDate"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Date</th>
+                                    <th>Participant</th>
+                                    <th>Class</th>
+                                    <th>Status</th>
+                                    <th>Notes</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="historyTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SUMMARY ================= -->
+
+            <section
+                id="summary"
+                class="content-section"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Attendance Summary</h2>
+
+                        <p>
+                            Attendance statistics for every participant.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-secondary"
+                        id="printSummaryBtn"
+                    >
+                        🖨️ Print Summary
+                    </button>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Participant</th>
+                                    <th>Class</th>
+                                    <th>Present</th>
+                                    <th>Permission</th>
+                                    <th>Sick</th>
+                                    <th>Absent</th>
+                                    <th>Total</th>
+                                    <th>Attendance Rate</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="summaryTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SETTINGS ================= -->
+
+            <section
+                id="settings"
+                class="content-section"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Settings</h2>
+
+                        <p>
+                            Manage application data.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="setting-item">
+
+                        <div>
+
+                            <h3>
+                                Delete All Data
+                            </h3>
+
+                            <p>
+                                Delete all participants and
+                                attendance records from this browser.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="btn btn-danger"
+                            id="deleteAllBtn"
+                        >
+                            🗑️ Delete All Data
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= PARTICIPANT MODAL ================= -->
+
+    <div
+        class="modal"
+        id="participantModal"
+    >
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 id="modalTitle">
+                    Add Participant
+                </h2>
+
+                <button
+                    class="modal-close"
+                    id="closeModalBtn"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <form id="participantForm">
+
+                <input
+                    type="hidden"
+                    id="editParticipantId"
+                >
+
+
+                <div class="form-group">
+
+                    <label for="participantId">
+                        Participant ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="participantId"
+                        placeholder="Example: PN001"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="participantName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="participantName"
+                        placeholder="Enter full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="participantClass">
+                        Class
+                    </label>
+
+                    <input
+                        type="text"
+                        id="participantClass"
+                        placeholder="Example: English A"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="participantLevel">
+                        English Level
+                    </label>
+
+                    <select
+                        id="participantLevel"
+                        required
+                    >
+
+                        <option value="">
+                            Select Level
+                        </option>
+
+                        <option value="Beginner">
+                            Beginner
+                        </option>
+
+                        <option value="Elementary">
+                            Elementary
+                        </option>
+
+                        <option value="Intermediate">
+                            Intermediate
+                        </option>
+
+                        <option value="Upper Intermediate">
+                            Upper Intermediate
+                        </option>
+
+                        <option value="Advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="participantPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="participantPhone"
+                        placeholder="Example: 081234567890"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelModalBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        💾 Save Participant
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- NOTIFICATION -->
+
+    <div
+        class="notification"
+        id="notification"
+    >
+        <span id="notificationText"></span>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
